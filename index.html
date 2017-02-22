@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>2048</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <script src=2048lib.js></script>
+        <link rel="stylesheet" href="normalize.css" media="screen" title="no title">
+        <link rel="stylesheet" href="2048.css" media="screen" title="no title">
+    </head>
+    <body>
+        <div class="t2048-game">
+            <div class="t2048-header">
+                <logo class="vertical-align">
+                    <span class="logo-title">2048</span>
+                    <span class='logo-info'>4 X 4</span>
+                </logo>
+                <div class="feature-group vertical-align">
+                    <score>
+                        <span class='score-now'>
+                            <span class='score-info'>得分</span>
+                            <span id='id-score-now'>0</span>
+                        </span>
+                        <span class='score-max'>
+                            <span class='score-info'>最高分</span>
+                            <span id='id-score-max'>0</span>
+                        </span>
+                    </score>
+                    <feature>
+                        <span class='feature-undo'>悔棋</span>
+                        <span class='new-game'>新游戏</span>
+                    </feature>
+                </div>
+            </div>
+            <div class="t2048-main">
+                <!-- <table class="vertical-align"> -->
+                <table class="vertical-align">
+                    <tr>
+                        <td class=''>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                        <td>
+                            <span class=""></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="t2048-footer">
+                <div class="false-eff none">
+                    你已经失败了，
+                    <br>
+                    你不知道吗?
+                </div>
+                <div class="success-eff none">
+                    恭喜恭喜！
+                    <br>
+                    你成功了，再来一局？
+                </div>
+            </div>
+        </div>
+        <script src=2048.js></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                    __main2048()
+                });
+        </script>
+    </body>
+</html>
