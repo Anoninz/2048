@@ -1,0 +1,289 @@
+.t2048-game {
+    height: 100vh;
+    background: #fbf8ee;
+}
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* header */
+.t2048-header {
+    height: 25%;
+}
+
+logo {
+    display: inline-block;
+    height: 6rem;
+    width: 6rem;
+    background: #ecc835;
+    margin-left: 1.5rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    float: left;
+}
+
+.logo-title {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 7vh;
+    margin-top: 1rem;
+}
+
+.logo-info {
+    display: block;
+    text-align: center;
+}
+
+.feature-group {
+    margin-left: 26vh;
+    font-size: 0;
+    color: #ffffff;
+}
+
+score {
+    display: block;
+}
+
+score > span {
+    background: #b7a99e;
+    box-sizing: border-box;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.score-now {
+    display: inline-block;
+    /*height: calc(7vh + 3vh + 1vh);*/
+}
+
+.score-max > span,
+.score-now > span {
+    display: block;
+}
+
+.score-max {
+    display: inline-block;
+    margin-left: 7vw;
+}
+
+.score-info {
+    margin-top: 0.2rem
+}
+
+#id-score-now,
+#id-score-max {
+    font-size: 1.4rem;
+}
+
+feature {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+feature > span {
+    background: #f5965f;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.feature-undo {
+    display: inline-block;
+}
+
+.new-game {
+    display: inline-block;
+    margin-left: 7vw;
+}
+
+/* footer */
+.t2048-footer {
+    height: 15%;
+}
+
+/* 2048 main */
+.t2048-main {
+    height: 60%;
+}
+
+table {
+    width: 90vw;
+    height: 90vw;
+    background: #b9ac9f;
+    margin: auto;
+    overflow: hidden;
+}
+
+td {
+    background: #cabeb1;
+    border-radius: 0.2rem;
+    width: 25%;
+    height: 25%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+td > span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* 算出行高的实际值 */
+    line-height: 20vw;
+    border-radius: 0.5rem;
+}
+
+/* 垂直居中 */
+.vertical-align {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.t2 {
+    background: #ebe2d8;
+    color: #756d63;
+}
+
+.t4 {
+    background: #eaddc6;
+    color: #756d63;
+}
+
+.t8 {
+    background: #efaf77;
+    color: #f8f5f1;
+}
+
+.t16 {
+    background: #f39463;
+    color: #f8f5f1;
+}
+
+.t32 {
+    background: #f37a5e;
+    color: #f8f5f1;
+}
+
+.t64 {
+    background: #f45d3a;
+    color: #f8f5f0;
+}
+
+.t128 {
+    background: #edcf72;
+    color: #f8f5f0;
+    font-size: 2.8rem;
+}
+
+.t256 {
+    background: #edcb5f;
+    color: #f9f6f3;
+    font-size: 2.8rem;
+}
+
+.t512 {
+    background: #edc850;
+    color: #f8f5f1;
+    font-size: 2.8rem;
+}
+
+.t1024 {
+    background: #edc53f;
+    color: #f8f5f3;
+    font-size: 2rem;
+}
+
+.t2048 {
+    background: #3e3c31;
+    color: #f8f5f0;
+    font-size: 2rem;
+}
+
+.t4096 {
+    background: #2b2a23;
+    color: #f8f5f0;
+    font-size: 2rem;
+}
+
+.t8192 {
+    background: #21201b;
+    color: #f8f5f0;
+    font-size: 2rem;
+}
+
+/* 新添加的元素添加放大效果 */
+.new-one {
+    transform: scale(0);
+    animation: shine 0.5s 0.25s;
+    -webkit-animation: shine 0.5s 0.25s;
+}
+
+@keyframes shine {
+    from {
+        transform: scale(0.2);
+        -webkit-transform: scale(0.2);
+    }
+    to {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+/* 合并的元素添加缩小效果 */
+.merge-one {
+    animation: suo 0.5s;
+    -webkit-animation: suo 0.5s;
+}
+
+@keyframes suo {
+    from {
+        transform: scale(2);
+        -webkit-transform: scale(2);
+    }
+    to {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}
+
+.none {
+    font-size: 0 !important;
+}
+
+.success-eff,
+.false-eff {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 1rem;
+    font-weight: bolder;
+    color: #f54444;
+}
+
+/* warning 动画 */
+.warning {
+    color: #f54444;
+    -webkit-animation: 0.1s warn 4 alternate;
+    animation: 0.1s warn 4 alternate;
+    text-align: center;
+}
+
+@keyframes warn {
+    0% {
+        transform: translate(-5%, 0%);
+    }
+    50% {
+        transform: translate(5%, 0%);
+    }
+}
